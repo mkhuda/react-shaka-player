@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist && rollup -c --perf",
-    "start": "rimraf dist && DEV=1 rollup -c --watch"
+    "start": "rimraf dist && DEV=1 rollup -c --watch",
+    "test": "jest"
   },
   "dependencies": {
     "rollup": "^2.56.2",
@@ -23,8 +24,10 @@
     "@rollup/plugin-node-resolve": "^13.0.4",
     "@rollup/plugin-replace": "^3.0.0",
     "@rollup/plugin-typescript": "^8.2.5",
+    "@types/jest": "^27.0.1",
     "@types/react": "^17.0.18",
     "@types/react-dom": "^17.0.9",
+    "@types/react-test-renderer": "^17.0.1",
     "babel-jest": "^27.0.6",
     "jest": "^27.0.6",
     "prettier": "^2.3.2",
@@ -36,6 +39,7 @@
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-html2": "^3.0.1",
     "rollup-plugin-serve": "^1.1.0",
+    "ts-jest": "^27.0.5",
     "tslib": "^2.3.1",
     "typescript": "^4.3.5"
   },
@@ -43,8 +47,20 @@
     "react": "^16.x.x || ^17.x.x"
   },
   "directories": {
-    "example": "example",
+    "demo": "demo",
     "test": "test"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testEnvironment": "jsdom", 
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "js",
+      "tsx"
+    ],
+    "setupFilesAfterEnv": ["<rootDir>/test/app.test.tsx"]
   },
   "repository": {
     "type": "git",

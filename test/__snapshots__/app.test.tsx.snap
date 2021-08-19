@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Player renders correctly 1`] = `
+<div
+  className="video-test"
+>
+  <video
+    className="video-test"
+    style={
+      Object {
+        "maxWidth": "100%",
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;

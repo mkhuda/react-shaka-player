@@ -1,19 +1,5 @@
-// import * as shaka from 'shaka-player/dist/shaka-player.compiled';
 import * as Shaka from "shaka-player/dist/shaka-player.ui";
 import * as React from "react";
-
-/**
- * A React component for shaka-player.
- * @param {string} src
- * @param {shaka.extern.PlayerConfiguration} config
- * @param {boolean} autoPlay
- * @param {number} width
- * @param {number} height
- * @param ref
- * @returns {*}
- * @constructor
- */
-
 export interface PlayerRefs {
   player?: Shaka.Player | undefined;
   ui?: Shaka.ui.Overlay | undefined;
@@ -23,7 +9,6 @@ export interface PlayerRefs {
 export interface PlayerProps {
   src?: string;
   config?: any;
-  chromeless?: boolean | undefined;
   autoPlay?: boolean | undefined;
   children?: any;
   className?: string;
@@ -37,10 +22,11 @@ const Player = React.forwardRef((props: PlayerProps, ref) => {
   const [ui, setUi] = React.useState<Shaka.ui.Overlay | null>(null);
 
   React.useEffect(() => {
+    Shaka.polyfill.installAll();
     const player = new Shaka.Player(videoRef.current);
     setPlayer(player);
 
-    if (!props.chromeless) {
+    if (player) {
       const ui = new Shaka.ui.Overlay(
         player,
         uiContainerRef.current,
@@ -64,7 +50,7 @@ const Player = React.forwardRef((props: PlayerProps, ref) => {
   }, [player, props.config]);
 
   React.useEffect(() => {
-    if (player && props.src) {
+    if (player && props.src && Shaka.Player.isBrowserSupported()) {
       player.load(props.src);
     }
   }, [player, props.src]);
