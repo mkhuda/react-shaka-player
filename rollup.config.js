@@ -1,15 +1,16 @@
 // Plugins
-import { babel } from "@rollup/plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
-import { nodeResolve } from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
+import { babel } from "@rollup/plugin-babel";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
 
 // Dev Plugins
-import replace from "@rollup/plugin-replace";
 import alias from "@rollup/plugin-alias";
-import serve from "rollup-plugin-serve";
-import html2 from "rollup-plugin-html2";
 import copy from "rollup-plugin-copy";
+import html2 from "rollup-plugin-html2";
+import postcss from 'rollup-plugin-postcss'
+import replace from "@rollup/plugin-replace";
+import serve from "rollup-plugin-serve";
 
 let builds = [];
 
@@ -64,6 +65,7 @@ if (process.env.DEV) {
       fileName: "index.html",
       template: "demo/index.html",
     }),
+    postcss(),
     alias({
       entries: [
         {

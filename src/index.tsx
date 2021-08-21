@@ -12,6 +12,7 @@ export interface PlayerProps {
   autoPlay?: boolean | undefined;
   children?: any;
   className?: string;
+  playerClassName?: string;
 }
 
 const Player = React.forwardRef((props: PlayerProps, ref) => {
@@ -71,15 +72,18 @@ const Player = React.forwardRef((props: PlayerProps, ref) => {
     [player, ui]
   );
 
+  let { className, playerClassName, ...newProps } = props;
+
   return (
     <div ref={uiContainerRef} className={props.className}>
       <video
         ref={videoRef}
+        className={props.playerClassName}
         style={{
           maxWidth: "100%",
           width: "100%",
         }}
-        {...props}
+        {...newProps}
       />
     </div>
   );

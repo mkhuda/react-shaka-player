@@ -1,11 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Player renders correctly 1`] = `
+exports[`Player render className container correctly 1`] = `
 <div
-  className="video-test"
+  className="container-class-name"
 >
   <video
-    className="video-test"
+    style={
+      Object {
+        "maxWidth": "100%",
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Player render container className and playerClassName container correctly 1`] = `
+<div
+  className="container-class-name"
+>
+  <video
+    className="player-class-name"
+    style={
+      Object {
+        "maxWidth": "100%",
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Player render playerClassName container correctly 1`] = `
+<div>
+  <video
+    className="player-class-name"
+    style={
+      Object {
+        "maxWidth": "100%",
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Player renders correctly 1`] = `
+<div>
+  <video
+    style={
+      Object {
+        "maxWidth": "100%",
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Player renders source[src] string correctly 1`] = `
+<div>
+  <video
+    src="this is sample src"
+    style={
+      Object {
+        "maxWidth": "100%",
+        "width": "100%",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Shaka player called correctly 1`] = `
+<div>
+  <video
+    src="playable video"
     style={
       Object {
         "maxWidth": "100%",

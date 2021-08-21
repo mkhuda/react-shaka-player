@@ -1,6 +1,6 @@
 {
   "name": "react-shaka-player",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "React video player built with Shaka-Player",
   "main": "dist/cjs.js",
   "author": "Muhammad K. Huda",
@@ -30,6 +30,7 @@
     "@types/react-test-renderer": "^17.0.1",
     "babel-jest": "^27.0.6",
     "jest": "^27.0.6",
+    "postcss": "^8.3.6",
     "prettier": "^2.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -38,13 +39,14 @@
     "rollup-plugin-bundle-html": "^0.2.2",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-html2": "^3.0.1",
+    "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-serve": "^1.1.0",
     "ts-jest": "^27.0.5",
     "tslib": "^2.3.1",
     "typescript": "^4.3.5"
   },
   "peerDependencies": {
-    "react": "^16.x.x || ^17.x.x"
+    "react": "^16.8.x || ^17.x.x"
   },
   "directories": {
     "demo": "demo",
@@ -54,13 +56,15 @@
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
-    "testEnvironment": "jsdom", 
+    "testEnvironment": "jsdom",
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleFileExtensions": [
       "js",
       "tsx"
     ],
-    "setupFilesAfterEnv": ["<rootDir>/test/app.test.tsx"]
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/app.test.tsx"
+    ]
   },
   "repository": {
     "type": "git",
