@@ -1,21 +1,9 @@
 import * as Shaka from "shaka-player/dist/shaka-player.ui";
 import * as React from "react";
-export interface PlayerRefs {
-  player?: Shaka.Player | undefined;
-  ui?: Shaka.ui.Overlay | undefined;
-  videoElement?: any;
-}
 
-export interface PlayerProps {
-  src?: string;
-  config?: any;
-  autoPlay?: boolean | undefined;
-  children?: any;
-  className?: string;
-  playerClassName?: string;
-}
+import { PlayerProps } from "./types/";
 
-const Player = React.forwardRef((props: PlayerProps, ref) => {
+const Player = (props: PlayerProps) => {
   const uiContainerRef = React.useRef<HTMLDivElement>(null);
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
@@ -24,6 +12,7 @@ const Player = React.forwardRef((props: PlayerProps, ref) => {
 
   React.useEffect(() => {
     Shaka.polyfill.installAll();
+
     const player = new Shaka.Player(videoRef.current);
     setPlayer(player);
 
@@ -34,6 +23,13 @@ const Player = React.forwardRef((props: PlayerProps, ref) => {
         videoRef.current
       );
       setUi(ui);
+      if (props.onLoad) {
+        props.onLoad({
+          player: player,
+          ui: ui,
+          videoElement: videoRef.current,
+        });
+      }
     }
 
     return () => {
@@ -56,23 +52,7 @@ const Player = React.forwardRef((props: PlayerProps, ref) => {
     }
   }, [player, props.src]);
 
-  React.useImperativeHandle(
-    ref,
-    () => ({
-      get player() {
-        return player;
-      },
-      get ui() {
-        return ui;
-      },
-      get videoElement() {
-        return videoRef.current;
-      },
-    }),
-    [player, ui]
-  );
-
-  let { className, playerClassName, ...newProps } = props;
+  const { className, playerClassName, onLoad, ...newProps } = props;
 
   return (
     <div ref={uiContainerRef} className={props.className}>
@@ -87,6 +67,6 @@ const Player = React.forwardRef((props: PlayerProps, ref) => {
       />
     </div>
   );
-});
+};
 
-export default Player as React.FC<any>;
+export default Player as React.FC<PlayerProps>;
