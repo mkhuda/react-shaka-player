@@ -10,13 +10,6 @@ function App() {
   const video =
     "https://livesim.dashif.org/livesim/chunkdur_1/ato_7/testpic4_8s/Manifest300.mpd";
 
-  React.useEffect(() => {
-    if (playerRef.current) {
-      let playerConfigs = playerRef.current;
-      console.log(playerConfigs.player);
-    }
-  }, [playerRef]);
-
   return (
     <div className="video-container">
       <Player
@@ -24,7 +17,6 @@ function App() {
         playerClassName="player-class"
         autoPlay
         src={video}
-        ref={playerRef}
       />
     </div>
   );
