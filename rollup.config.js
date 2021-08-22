@@ -69,7 +69,7 @@ if (process.env.DEV) {
     alias({
       entries: [
         {
-          find: "@mk/react-shaka-player",
+          find: "@mkhuda/react-shaka-player",
           replacement: "../dist/cjs.js",
         },
       ],
