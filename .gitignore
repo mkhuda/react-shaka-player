@@ -3,3 +3,4 @@ coverage
 .idea
 yarn-error.log
 dist/
+test/__snapshots__/*

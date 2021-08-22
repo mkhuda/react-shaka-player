@@ -1,0 +1,4 @@
+test/
+demo/
+.prettierrc
+yarn-error.log
