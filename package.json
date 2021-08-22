@@ -73,5 +73,8 @@
   "bugs": {
     "url": "https://github.com/mkhuda/react-shaka-player/issues"
   },
-  "homepage": "https://github.com/mkhuda/react-shaka-player#readme"
+  "homepage": "https://github.com/mkhuda/react-shaka-player#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }
