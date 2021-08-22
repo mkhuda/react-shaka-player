@@ -1,5 +1,5 @@
 {
-  "name": "react-shaka-player",
+  "name": "@mk/react-shaka-player",
   "version": "1.1.0",
   "description": "React video player built with Shaka-Player",
   "main": "dist/cjs.js",

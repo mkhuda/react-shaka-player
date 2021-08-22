@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Player from "react-shaka-player";
+import Player from "@mk/react-shaka-player";
 import "shaka-player/dist/controls.css";
 
 function App() {

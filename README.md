@@ -7,17 +7,17 @@ React video player built with [Shaka Player](https://github.com/google/shaka-pla
 Use the package manager [yarn](https://classic.yarnpkg.com/en/) or [npm](https://www.npmjs.com/) to install `react-shaka-player`.
 
 ```bash
-yarn add react-shaka-player
+yarn add @mk/react-shaka-player
 
 or
 
-npm install react-shaka-player
+npm install @mk/react-shaka-player
 ```
 
 ## Usage
 
 ```javascript
-import Player from "react-shaka-player"
+import Player from "@mk/react-shaka-player"
 
 function App() {
     return(
