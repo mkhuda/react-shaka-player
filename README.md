@@ -1,4 +1,4 @@
-# react-shaka-player (Work In Progress)
+# react-shaka-player (Work In Progress) [![Build Status](https://app.travis-ci.com/mkhuda/react-shaka-player.svg?branch=main)](https://app.travis-ci.com/mkhuda/react-shaka-player)
 
 React video player built with [Shaka Player](https://github.com/google/shaka-player).
 
