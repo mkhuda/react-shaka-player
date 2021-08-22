@@ -1,0 +1,8 @@
+language: node_js
+node_js: 16
+jobs:
+  include:
+  - stage: test
+    script:
+    - yarn build
+    - yarn test
