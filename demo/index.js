@@ -17,6 +17,7 @@ function App() {
         playerClassName="player-class"
         autoPlay
         src={video}
+        onBuffering={(isBuffering) => console.log("isBuffering:", isBuffering)}
       />
     </div>
   );

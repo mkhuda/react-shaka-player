@@ -14,4 +14,5 @@ export interface PlayerProps {
     className?: string;
     playerClassName?: string;
     onLoad?(data: PlayerRefs): void;
+    onBuffering?(event: boolean): void;
 }
