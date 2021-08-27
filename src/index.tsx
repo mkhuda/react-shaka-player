@@ -7,21 +7,34 @@ const Player = (props: PlayerProps) => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
   const uiContainerRef = React.useRef<HTMLDivElement>(null);
 
-  const { player } = Hooks.usePlayer(videoRef, uiContainerRef, props);
-  Hooks.useCallback(player, props);
+  const { player, ui } = Hooks.usePlayer(videoRef, uiContainerRef, props);
+  Hooks.usePlayerListener(player, props);
+  Hooks.useUIListener(ui, player, props);
 
-  const { className, playerClassName, onLoad, onBuffering, ...newProps } =
-    props;
+  const {
+    className,
+    playerClassName,
+    config,
+    uiConfig,
+    onLoad,
+    onPlay,
+    onPause,
+    onBuffering,
+    onPlayerError,
+    ...newProps
+  } = props;
+
+  const style = {
+    maxWidth: "100%",
+    width: "100%",
+  };
 
   return (
-    <div ref={uiContainerRef} className={props.className}>
+    <div style={style} ref={uiContainerRef} className={props.className}>
       <video
         ref={videoRef}
         className={props.playerClassName}
-        style={{
-          maxWidth: "100%",
-          width: "100%",
-        }}
+        style={style}
         {...newProps}
       />
     </div>

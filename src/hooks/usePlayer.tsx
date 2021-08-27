@@ -42,7 +42,7 @@ const usePlayer = (
         videoElement: videoRef.current,
       });
     }
-  }, [player, props.onLoad]);
+  }, [player]);
 
   React.useEffect(() => {
     if (player && props.config) {
