@@ -2,7 +2,7 @@
 [![Build Status](https://app.travis-ci.com/mkhuda/react-shaka-player.svg?branch=main)](https://app.travis-ci.com/mkhuda/react-shaka-player) [![npm version](https://badge.fury.io/js/%40mkhuda%2Freact-shaka-player.svg)](https://badge.fury.io/js/%40mkhuda%2Freact-shaka-player) ![npm](https://img.shields.io/npm/v/shaka-player?label=shaka-player)
 
 React video player built on top of [Shaka Player](https://github.com/google/shaka-player). 
-> [DEMO](https://csb-pygk8-28zhwttr0-mkhuda.vercel.app/)
+> [DEMO](https://csb-pygk8-mkhuda.vercel.app/)
 
 > [CODESANDBOX](https://codesandbox.io/s/keen-dewdney-pygk8)
 
