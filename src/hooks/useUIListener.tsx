@@ -23,8 +23,12 @@ const useUIListener = (
       const _onPause = () => {
         props.onPause && props.onPause();
       };
+      const _onEnded = () => {
+        props.onEnded && props.onEnded();
+      };
       mediaElement.addEventListener("play", _onPlay);
       mediaElement.addEventListener("pause", _onPause);
+      mediaElement.addEventListener("ended", _onEnded);
     }
   }, [player]);
 };

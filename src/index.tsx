@@ -19,6 +19,7 @@ const Player = (props: PlayerProps) => {
     onLoad,
     onPlay,
     onPause,
+    onEnded,
     onBuffering,
     onPlayerError,
     ...newProps
