@@ -18,6 +18,7 @@ export interface PlayerProps {
     onLoad?(data: PlayerRefs): void;
     onPlay?(): void | undefined;
     onPause?(): void | undefined;
+    onEnded?(): void | undefined;
     onPlayerError?(event: Shaka.extern.Error): void;
     onBuffering?(event: boolean): void;
 }
