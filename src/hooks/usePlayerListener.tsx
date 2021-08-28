@@ -5,11 +5,15 @@ import { PlayerProps } from "../types";
 
 const usePlayerListener = (player: Shaka.Player, props: PlayerProps) => {
   React.useEffect(() => {
+    const _onPlayerErrorEvent = (error: Shaka.extern.Error | any) => {
+      props.onPlayerError && props.onPlayerError(error);
+    };
     const _onBufferingEvent = (bufferStatus: any) => {
       const boolOfBuffering: boolean = bufferStatus.buffering;
-      props.onBuffering(boolOfBuffering);
+      props.onBuffering && props.onBuffering(boolOfBuffering);
     };
-    if (player && props.onBuffering) {
+    if (player) {
+      player.addEventListener("error", _onPlayerErrorEvent);
       player.addEventListener("buffering", _onBufferingEvent);
     }
   }, [player]);
