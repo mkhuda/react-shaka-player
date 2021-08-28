@@ -82,5 +82,12 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "keywords": [
+    "react",
+    "shaka-player",
+    "video-player",
+    "mpd",
+    "hls"
+  ]
 }
