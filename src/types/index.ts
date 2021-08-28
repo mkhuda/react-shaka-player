@@ -8,10 +8,16 @@ export interface PlayerRefs {
 
 export interface PlayerProps {
     src?: string;
-    config?: any;
+    config?: shaka.extern.PlayerConfiguration | any;
+    uiConfig?: shaka.extern.UIConfiguration | any;
     autoPlay?: boolean | undefined;
+    playsInline?: boolean | undefined;
     children?: any;
     className?: string;
     playerClassName?: string;
     onLoad?(data: PlayerRefs): void;
+    onPlay?(): void | undefined;
+    onPause?(): void | undefined;
+    onPlayerError?(event: Shaka.extern.Error): void;
+    onBuffering?(event: boolean): void;
 }
