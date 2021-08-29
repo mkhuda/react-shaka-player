@@ -52,7 +52,14 @@ const usePlayer = (
 
   React.useEffect(() => {
     if (player && props.src && Shaka.Player.isBrowserSupported()) {
-      player.load(props.src);
+      const initLoad = async () => {
+        try {
+          await player.load(props.src);
+        } catch (e) {
+          props.onPlayerError && props.onPlayerError(e);
+        }
+      };
+      initLoad();
     }
   }, [player, props.src]);
 
