@@ -1,15 +1,18 @@
 import * as React from "react";
 import * as Hooks from "./hooks";
+import * as Shaka from "shaka-player/dist/shaka-player.ui";
 
 import { PlayerProps } from "./types/";
 
 const Player = (props: PlayerProps) => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
   const uiContainerRef = React.useRef<HTMLDivElement>(null);
+  const playerStats = React.useRef<Shaka.extern.Stats | null>(null);
 
   const { player, ui } = Hooks.usePlayer(videoRef, uiContainerRef, props);
   Hooks.usePlayerListener(player, props);
   Hooks.useUIListener(ui, player, props);
+  Hooks.useStats(player, props, playerStats);
 
   const {
     className,
@@ -21,6 +24,7 @@ const Player = (props: PlayerProps) => {
     onPause,
     onEnded,
     onBuffering,
+    onStatsChanged,
     onPlayerError,
     ...newProps
   } = props;
