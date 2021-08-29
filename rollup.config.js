@@ -37,7 +37,7 @@ const distBuildConfig = {
   input: "src/index.tsx",
   output: {
     name: "Player",
-    file: "dist/cjs.js",
+    file: "dist/index.js",
     format: process.env.DEV ? "esm" : "cjs",
     exports: "auto",
     globals: {
@@ -72,7 +72,7 @@ if (process.env.DEV) {
       entries: [
         {
           find: "@mkhuda/react-shaka-player",
-          replacement: "../dist/cjs.js",
+          replacement: "../dist/index.js",
         },
       ],
     }),
