@@ -2,7 +2,7 @@
   "name": "@mkhuda/react-shaka-player",
   "version": "1.1.4",
   "description": "React video player built with Shaka-Player",
-  "main": "dist/cjs.js",
+  "main": "dist/index.js",
   "author": "Muhammad K. Huda",
   "license": "MIT",
   "scripts": {

@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "declaration": true,
+    "declarationDir": ".",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
@@ -7,11 +9,12 @@
     "module": "es6",
     "moduleResolution": "node",
     "noImplicitAny": true,
-    "rootDirs": ["./src", "./test"],
+    "rootDirs": ["./src"],
     "outDir": "./dist",
     "preserveConstEnums": true,
     "target": "es5",
     "esModuleInterop": true
   },
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }

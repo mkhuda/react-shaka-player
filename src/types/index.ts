@@ -15,10 +15,11 @@ export interface PlayerProps {
     children?: any;
     className?: string;
     playerClassName?: string;
-    onLoad?(data: PlayerRefs): void;
+    onLoad?(data: PlayerRefs): void | undefined;
     onPlay?(): void | undefined;
     onPause?(): void | undefined;
     onEnded?(): void | undefined;
-    onPlayerError?(event: Shaka.extern.Error): void;
-    onBuffering?(event: boolean): void;
+    onStatsChanged?(event: Shaka.extern.Stats): void | undefined;
+    onPlayerError?(event: Shaka.extern.Error): void | undefined;
+    onBuffering?(event: boolean): void | undefined;
 }
