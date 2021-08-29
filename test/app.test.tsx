@@ -2,7 +2,7 @@ import * as Enzyme from "enzyme";
 import * as React from "react";
 import * as renderer from "react-test-renderer";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
-import Player from "../src";
+import Player from "../src/components/player";
 
 Enzyme.configure({ adapter: new Adapter() });
 
