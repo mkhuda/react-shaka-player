@@ -8,8 +8,8 @@ export interface PlayerRefs {
 
 export interface PlayerProps {
     src?: string;
-    config?: shaka.extern.PlayerConfiguration | any;
-    uiConfig?: shaka.extern.UIConfiguration | any;
+    config?: Shaka.extern.PlayerConfiguration | any;
+    uiConfig?: Shaka.extern.UIConfiguration | any;
     autoPlay?: boolean | undefined;
     playsInline?: boolean | undefined;
     children?: any;
