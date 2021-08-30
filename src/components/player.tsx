@@ -2,7 +2,7 @@ import * as React from "react";
 import * as Hooks from "../hooks";
 import * as Shaka from "shaka-player/dist/shaka-player.ui";
 
-import { PlayerProps, PlayerRefs } from "../types/";
+import { PlayerProps } from "../types/";
 
 const ReactShakaPlayer = (props: PlayerProps) => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
@@ -12,7 +12,7 @@ const ReactShakaPlayer = (props: PlayerProps) => {
   const { player, ui } = Hooks.usePlayer(videoRef, uiContainerRef, props);
   Hooks.usePlayerListener(player, props);
   Hooks.useUIListener(ui, player, props);
-  Hooks.useStats(player, props, playerStats);
+  Hooks.useStats(player, playerStats, props);
 
   const {
     className,
@@ -46,4 +46,4 @@ const ReactShakaPlayer = (props: PlayerProps) => {
   );
 };
 
-export default ReactShakaPlayer as React.FC<PlayerProps>;
+export { ReactShakaPlayer };

@@ -5,8 +5,8 @@ import { PlayerProps } from "../types";
 
 const useStats = (
   player: Shaka.Player,
-  props: PlayerProps,
-  statsRef: React.MutableRefObject<Shaka.extern.Stats>
+  statsRef: React.MutableRefObject<Shaka.extern.Stats>,
+  props?: PlayerProps,
 ) => {
   const [timer, setShakaTimer] = React.useState<Shaka.util.Timer | null>(null);
   React.useEffect(() => {

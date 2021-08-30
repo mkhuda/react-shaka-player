@@ -1,4 +1,3 @@
-import ReactShakaPlayer from "./components/player";
-import { PlayerProps, PlayerRefs } from "./types/";
-
-export { ReactShakaPlayer, PlayerProps, PlayerRefs };
+export * from "./components/player";
+export * from "./hooks";
+export * from "./types";
