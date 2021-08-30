@@ -6,7 +6,7 @@ import { PlayerProps } from "../types/";
 const usePlayer = (
   videoRef: React.MutableRefObject<HTMLVideoElement>,
   uiContainerRef: React.MutableRefObject<HTMLDivElement>,
-  props: PlayerProps
+  props?: PlayerProps
 ) => {
   const [player, setPlayer] = React.useState<Shaka.Player | null>(null);
   const [ui, setUi] = React.useState<Shaka.ui.Overlay | null>(null);

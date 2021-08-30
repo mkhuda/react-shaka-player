@@ -27,7 +27,7 @@ npm install @mkhuda/react-shaka-player shaka-player
 ```javascript
 // don't forget to import controls.css from shaka-player lib
 import "shaka-player/dist/controls.css";
-import ReactShakaPlayer from "@mkhuda/react-shaka-player";
+import { ReactShakaPlayer } from "@mkhuda/react-shaka-player";
 
 function App() {
   return <ReactShakaPlayer autoPlay={true} src={"https://yourvideohere.mpd"} />;
@@ -37,6 +37,9 @@ function App() {
 ## Manual Handle Usage
 
 ```javascript
+import "shaka-player/dist/controls.css";
+import { ReactShakaPlayer } from "@mkhuda/react-shaka-player";
+
 function App() {
   let [mainPlayer, setMainPlayer] = useState({});
 

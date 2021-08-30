@@ -3,7 +3,7 @@ import * as React from "react";
 
 import { PlayerProps } from "../types";
 
-const usePlayerListener = (player: Shaka.Player, props: PlayerProps) => {
+const usePlayerListener = (player: Shaka.Player, props?: PlayerProps) => {
   React.useEffect(() => {
     const _onPlayerErrorEvent = (error: Shaka.extern.Error | any) => {
       props.onPlayerError && props.onPlayerError(error);

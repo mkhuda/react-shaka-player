@@ -6,7 +6,7 @@ import { PlayerProps } from "../types";
 const useUIListener = (
   ui: Shaka.ui.Overlay,
   player: Shaka.Player,
-  props: PlayerProps
+  props?: PlayerProps
 ) => {
   React.useEffect(() => {
     if (ui && props.uiConfig) {
