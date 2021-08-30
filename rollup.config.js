@@ -36,10 +36,10 @@ const defaultPlugins = [
 const distBuildConfig = {
   input: "src/index.tsx",
   output: {
-    name: "Player",
+    name: "ReactShakaPlayer",
     file: "dist/index.js",
     format: process.env.DEV ? "esm" : "cjs",
-    exports: "auto",
+    exports: "named",
     globals: {
       react: "react",
       "react-dom": "react-dom",
