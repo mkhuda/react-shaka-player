@@ -1,5 +1,6 @@
 import * as Shaka from "shaka-player/dist/shaka-player.ui";
 import * as React from "react";
+import UIHooks from "./useUI";
 
 import { PlayerProps } from "../types/";
 
@@ -9,28 +10,16 @@ const usePlayer = (
   props?: PlayerProps
 ) => {
   const [player, setPlayer] = React.useState<Shaka.Player | null>(null);
-  const [ui, setUi] = React.useState<Shaka.ui.Overlay | null>(null);
+  const ui = UIHooks(player, videoRef, uiContainerRef, props);
 
   React.useEffect(() => {
     Shaka.polyfill.installAll();
 
-    const player = new Shaka.Player(videoRef.current);
-    setPlayer(player);
-
-    if (player) {
-      const ui = new Shaka.ui.Overlay(
-        player,
-        uiContainerRef.current,
-        videoRef.current
-      );
-      setUi(ui);
-    }
+    const mainPlayer = new Shaka.Player(videoRef.current);
+    setPlayer(mainPlayer);
 
     return () => {
-      player.destroy();
-      if (ui) {
-        ui.destroy();
-      }
+      mainPlayer.destroy();
     };
   }, []);
 

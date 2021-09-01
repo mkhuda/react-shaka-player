@@ -9,13 +9,7 @@ const useUIListener = (
   props?: PlayerProps
 ) => {
   React.useEffect(() => {
-    if (ui && props.uiConfig) {
-      ui.configure(props.uiConfig);
-    }
-  }, [ui, props]);
-
-  React.useEffect(() => {
-    if (player) {
+    if (player && ui) {
       const mediaElement = player.getMediaElement();
       const _onPlay = () => {
         props.onPlay && props.onPlay();
@@ -30,7 +24,7 @@ const useUIListener = (
       mediaElement.addEventListener("pause", _onPause);
       mediaElement.addEventListener("ended", _onEnded);
     }
-  }, [player]);
+  }, [player, ui]);
 };
 
 export default useUIListener;
