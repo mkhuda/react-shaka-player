@@ -853,7 +853,7 @@
   height: 27px;
   width: 40px;
   border-radius: 49px;
-  background: #bfe136;
+  background: #2eb5c0;
   cursor: pointer;
   -webkit-appearance: none;
 }
@@ -873,7 +873,7 @@
   height: 27px;
   width: 50px;
   border-radius: 49px;
-  background: #bfe136;
+  background: #2eb5c0;
   cursor: pointer;
 }
 .mk-theme .shaka-seek-bar-container input[type="range"]::-ms-track {
@@ -904,7 +904,7 @@
   height: 27px;
   width: 50px;
   border-radius: 49px;
-  background: #bfe136;
+  background: #2eb5c0;
   cursor: pointer;
 }
 
