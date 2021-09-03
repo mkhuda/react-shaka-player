@@ -19,4 +19,11 @@ const streamingConfig = {
   },
 };
 
-export {streamingConfig};
+const vodConfig = {
+  ui: {
+    controlPanelElements: ["time_and_duration", "mute", "fullscreen"],
+    addBigPlayButton: true,
+  },
+};
+
+export { streamingConfig, vodConfig };

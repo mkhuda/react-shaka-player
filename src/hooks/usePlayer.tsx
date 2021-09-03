@@ -40,7 +40,7 @@ const usePlayer = (
       player.configure(props.config);
     } else if (player && props.superConfig) {
       switch (props.superConfig) {
-        case SuperConfig.Streaming:
+        case SuperConfig.STREAMING:
           player.configure(Configs.streamingConfig.player);
           break;
         default:

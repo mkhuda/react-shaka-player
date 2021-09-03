@@ -1,3 +1,4 @@
 export enum SuperConfig {
-    Streaming = "streaming",
+    STREAMING = "STREAMING",
+    VOD = "VOD"
 }
