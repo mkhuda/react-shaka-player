@@ -25,8 +25,8 @@ npm install @mkhuda/react-shaka-player shaka-player
 ## Usage
 
 ```javascript
-// don't forget to import controls.css from shaka-player lib
-import "shaka-player/dist/controls.css";
+// import the css
+import "@mkhuda/react-shaka-player/dist/ui.css";
 import { ReactShakaPlayer } from "@mkhuda/react-shaka-player";
 
 function App() {
@@ -75,7 +75,7 @@ This is main props for the components:
 |                |Description                         |Type                         |
 |----------------|-------------------------------|-----------------------------|
 |src|MPD or HLS to play            |string           |
-|className (optional, | string of ui overlay classname | string |
+|className (optional) | string of ui overlay classname | string |
 |autoPlay (optional, default: `true`)| as it described | boolean |
 |config (optional) |Changes configuration settings on Shaka Player. Reference: [shaka.extern.PlayerConfiguration](https://shaka-player-demo.appspot.com/docs/api/shaka.extern.html#.PlayerConfiguration)      | object            |
 |uiConfig (optional) |Changes configuration settings for UI elements. Reference: [shaka.extern.UIConfiguration](https://shaka-player-demo.appspot.com/docs/api/shaka.extern.html#.UIConfiguration)      | object            |
@@ -85,6 +85,7 @@ This is main props for the components:
 |onEnded (optional)|Catch when video is end |func|
 |onBuffering (optional)|Catch `onBuffering` status when playing |bool => func|
 |onPlayerError (optional)|Catch `error` when playing. Reference: [Shaka.Player.ErrorEvent](https://shaka-player-demo.appspot.com/docs/api/shaka.Player.html#.event:ErrorEvent) |{Shaka.extern.Error} => func|
+|onStatsChanged (optional)|Catch `stats` when playing video. Reference: [Shaka.extern.Stats](https://shaka-player-demo.appspot.com/docs/api/shaka.extern.html#.Stats) |{Shaka.extern.Stats} => func|
 
 ## Contributing
 
