@@ -44,7 +44,7 @@ const usePlayer = (
           player.configure(Configs.streamingConfig.player);
           break;
         default:
-          player.configure(props.config);
+          player.configure({});
           break;
       }
     }

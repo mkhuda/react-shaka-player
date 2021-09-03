@@ -40,7 +40,7 @@ const useUI = (
           ui.configure(Configs.vodConfig.ui);
           break;
         default:
-          ui.configure(props.uiConfig);
+          ui.configure({});
           break;
       }
     }
