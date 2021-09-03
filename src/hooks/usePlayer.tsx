@@ -1,8 +1,10 @@
 import * as Shaka from "shaka-player/dist/shaka-player.ui";
 import * as React from "react";
+import * as Configs from "../configs/";
 import UIHooks from "./useUI";
 
 import { PlayerProps } from "../types/";
+import { SuperConfig } from "../types/enum";
 
 const usePlayer = (
   videoRef: React.MutableRefObject<HTMLVideoElement>,
@@ -36,6 +38,15 @@ const usePlayer = (
   React.useEffect(() => {
     if (player && props.config) {
       player.configure(props.config);
+    } else if (player && props.superConfig) {
+      switch (props.superConfig) {
+        case SuperConfig.Streaming:
+          player.configure(Configs.streamingConfig.player);
+          break;
+        default:
+          player.configure(props.config);
+          break;
+      }
     }
   }, [player, props.config]);
 

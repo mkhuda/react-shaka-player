@@ -8,6 +8,7 @@ exports[`Player render playerClassName container correctly 1`] = `ShallowWrapper
 
 exports[`Player renders correctly 1`] = `
 <div
+  className="mk-theme"
   style={
     Object {
       "maxWidth": "100%",

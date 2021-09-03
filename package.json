@@ -66,8 +66,9 @@
     "testEnvironment": "jsdom",
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleFileExtensions": [
-      "js",
-      "tsx"
+      "ts",
+      "tsx",
+      "js"
     ],
     "setupFilesAfterEnv": [
       "<rootDir>/test/app.test.tsx"

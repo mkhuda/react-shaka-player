@@ -1,5 +1,7 @@
 import * as Shaka from "shaka-player/dist/shaka-player.ui";
 
+import { SuperConfig } from "./enum";
+
 export interface PlayerRefs {
     player: Shaka.Player;
     ui: Shaka.ui.Overlay;
@@ -10,6 +12,7 @@ export interface PlayerProps {
     src?: string;
     config?: Shaka.extern.PlayerConfiguration | any;
     uiConfig?: Shaka.extern.UIConfiguration | any;
+    superConfig?: SuperConfig | undefined;
     autoPlay?: boolean | undefined;
     playsInline?: boolean | undefined;
     children?: any;

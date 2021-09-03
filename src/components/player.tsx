@@ -17,6 +17,7 @@ const ReactShakaPlayer = (props: PlayerProps) => {
   const {
     className,
     playerClassName,
+    superConfig,
     config,
     uiConfig,
     onLoad,
