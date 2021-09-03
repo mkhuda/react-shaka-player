@@ -12,13 +12,13 @@ deploy:
   - provider: npm
     email: "$NPM_EMAIL"
     api_key: "$NPM_TOKEN"
-    skip_cleanup: true
+    cleanup: true
     on:
       branch: main
   - provider: npm
     tag: beta
     email: "$NPM_EMAIL"
     api_key: "$NPM_TOKEN"
-    skip_cleanup: true
+    cleanup: true
     on:
       branch: beta
