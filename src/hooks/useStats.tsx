@@ -29,7 +29,7 @@ const useStats = (
       const _timer = new Shaka.util.Timer(() => {
         _sendStats();
       });
-      _timer.tickEvery(0.8);
+      _timer.tickEvery(1);
       timer.current = _timer;
     }
 
