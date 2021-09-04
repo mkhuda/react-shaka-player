@@ -23,6 +23,14 @@ const defaultPlugins = [
   babel({
     exclude: "node_modules/**",
   }),
+  copy({
+    targets: [
+      {
+        src: "src/styles/ui.css",
+        dest: "dist",
+      },
+    ],
+  }),
   nodeResolve(),
   commonjs(),
   typescript({
@@ -57,7 +65,7 @@ if (process.env.DEV) {
     copy({
       targets: [
         {
-          src: "node_modules/shaka-player/dist/controls.css",
+          src: "src/styles/ui.css",
           dest: "dist",
         },
       ],

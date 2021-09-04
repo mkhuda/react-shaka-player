@@ -17,6 +17,7 @@ const ReactShakaPlayer = (props: PlayerProps) => {
   const {
     className,
     playerClassName,
+    superConfig,
     config,
     uiConfig,
     onLoad,
@@ -35,7 +36,11 @@ const ReactShakaPlayer = (props: PlayerProps) => {
   };
 
   return (
-    <div style={style} ref={uiContainerRef} className={props.className}>
+    <div
+      style={style}
+      ref={uiContainerRef}
+      className={props.className == undefined ? "mk-theme" : props.className}
+    >
       <video
         ref={videoRef}
         className={props.playerClassName}

@@ -1,6 +1,6 @@
 {
   "name": "@mkhuda/react-shaka-player",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "React video player built with Shaka-Player",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -66,8 +66,9 @@
     "testEnvironment": "jsdom",
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleFileExtensions": [
-      "js",
-      "tsx"
+      "ts",
+      "tsx",
+      "js"
     ],
     "setupFilesAfterEnv": [
       "<rootDir>/test/app.test.tsx"
