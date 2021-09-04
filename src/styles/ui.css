@@ -16,7 +16,7 @@
 }
 
 .shaka-video-container .material-icons-round {
-  font-family: "Material Icons Round";
+  font-family: "Material Icons Outlined";
   font-size: 24px;
 }
 
@@ -239,7 +239,7 @@
 
 .shaka-play-button {
   box-sizing: border-box;
-  padding: 7.5%;
+  padding: 6%;
   width: 0;
   height: 0;
   margin: 0;
@@ -249,7 +249,6 @@
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: rgba(255, 255, 255, 0.9);
   opacity: 0;
   transition: opacity cubic-bezier(0.4, 0, 0.6, 1) 0.6s;
 }
@@ -653,6 +652,15 @@
   margin: 0;
 }
 
+/* fallback from: https://fonts.googleapis.com/css?family=Material+Icons+Outlined */
+@font-face {
+  font-family: "Material Icons Outlined";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialiconsoutlined/v76/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUce.woff2)
+    format("woff2");
+}
+
 @font-face {
   font-family: Roboto;
   font-style: normal;
@@ -670,7 +678,7 @@
 }
 
 .material-icons-round {
-  font-family: "Material Icons Round";
+  font-family: "Material Icons Outlined";
   font-weight: 400;
   font-style: normal;
   font-size: 24px;
@@ -699,6 +707,22 @@
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9vAw.ttf)
     format("truetype");
+}
+
+.material-icons-outlined {
+  font-family: "Material Icons Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
 }
 
 .mk-theme {
@@ -745,6 +769,10 @@
   -webkit-box-ordinal-group: -2;
   -ms-flex-order: -3;
   order: -3;
+}
+
+.mk-theme .shaka-small-play-button[aria-label="Pause"] {
+  content: "pause_circle_filled"
 }
 
 .mk-theme .shaka-mute-button {
@@ -913,7 +941,7 @@
 }
 
 .mk-theme .shaka-video-container .material-icons-round {
-  font-family: "Material Icons Sharp";
+  font-family: "Material Icons Outlined";
 }
 
 .mk-theme .shaka-overflow-menu,
@@ -1021,7 +1049,7 @@
 
 .mk-theme .shaka-overflow-menu span + span:after {
   content: "navigate_next";
-  font-family: "Material Icons Sharp";
+  font-family: "Material Icons Outlined";
   font-size: 20px;
 }
 
@@ -1042,6 +1070,7 @@
 }
 
 .mk-theme .shaka-back-to-overflow-button .material-icons-round {
+  font-family: "Material Icons Outlined";
   font-size: 15px;
   padding-right: 10px;
 }

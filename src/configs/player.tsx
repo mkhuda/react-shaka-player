@@ -8,21 +8,21 @@ const streamingConfig = {
     streaming: {
       lowLatencyMode: true,
       inaccurateManifestTolerance: 0,
-      bufferingGoal: 10,
       rebufferingGoal: 1,
+      smallGapLimit: 1,
+      jumpLargeGaps: true,
+      durationBackoff: 0
     },
   },
   ui: {
     addSeekBar: false,
     controlPanelElements: ["time_and_duration", "mute", "fullscreen"],
-    addBigPlayButton: true,
   },
 };
 
 const vodConfig = {
   ui: {
-    controlPanelElements: ["time_and_duration", "mute", "fullscreen"],
-    addBigPlayButton: true,
+    controlPanelElements: ["play_pause", "time_and_duration", "mute", "fullscreen"]
   },
 };
 

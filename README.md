@@ -77,7 +77,7 @@ This is main props for the components:
 |src|MPD or HLS to play            |string           |
 |className (optional) | string of ui overlay classname | string |
 |autoPlay (optional, default: `true`)| as it described | boolean |
-|superConfig ("STREAMING" | "VOD") |The special configs for Streaming or VOD.      | string ("STREAMING" | "VOD")            |
+|superConfig (optional: "STREAMING", "VOD") |The special configs for Streaming or VOD. Will add more `superConfig` soon.      | string ("STREAMING" / "VOD")            |
 |config (optional) |Changes configuration settings on Shaka Player. Reference: [shaka.extern.PlayerConfiguration](https://shaka-player-demo.appspot.com/docs/api/shaka.extern.html#.PlayerConfiguration). This config will override `superConfig`.      | object            |
 |uiConfig (optional) |Changes configuration settings for UI elements. Reference: [shaka.extern.UIConfiguration](https://shaka-player-demo.appspot.com/docs/api/shaka.extern.html#.UIConfiguration). This config will override `superConfig`.      | object            |
 |onLoad (optional) |Catch `Shaka.Player`, `Shaka.ui.Overlay` and `HTMLVideoElement` for manual usages or improvement of configuration. see: [PlayerRefs](https://github.com/mkhuda/react-shaka-player/blob/c4459e31027a08165007d03c9a08ff8a3e5de3dc/src/types/index.ts#L3) |object: PlayerRefs => func|
@@ -86,7 +86,7 @@ This is main props for the components:
 |onEnded (optional)|Catch when video is end |func|
 |onBuffering (optional)|Catch `onBuffering` status when playing |bool => func|
 |onPlayerError (optional)|Catch `error` when playing. Reference: [Shaka.Player.ErrorEvent](https://shaka-player-demo.appspot.com/docs/api/shaka.Player.html#.event:ErrorEvent) |{Shaka.extern.Error} => func|
-|onStatsChanged (optional)|Catch `stats` when playing video. Reference: [Shaka.extern.Stats](https://shaka-player-demo.appspot.com/docs/api/shaka.extern.html#.Stats) |{Shaka.extern.Stats} => func|
+|onStatsChanged (optional)|Catch `stats` when playing video, including currentTime, and currentEndTime (in seconds) of media player element [`IStats`]. Reference: [Shaka.extern.Stats](https://shaka-player-demo.appspot.com/docs/api/shaka.extern.html#.Stats) |{Shaka.extern.Stats} => func|
 
 ## Contributing
 

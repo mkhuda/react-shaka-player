@@ -39,9 +39,6 @@ const defaultPlugins = [
     target: "es5",
   }),
   strip(),
-  postcss({
-    plugins: [],
-  }),
 ];
 
 const distBuildConfig = {
