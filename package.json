@@ -7,7 +7,8 @@
   "author": "Muhammad K. Huda",
   "license": "MIT",
   "scripts": {
-    "build-css": "node-minify --compressor clean-css --input \"src/styles/ui.css\" --output \"dist/ui.css\"",
+    "nodeminify": "node ./node_modules/.bin/node-minify",
+    "build-css": "yarn nodeminify --compressor clean-css --input \"src/styles/ui.css\" --output \"dist/ui.css\"",
     "build": "rimraf dist && rollup -c --perf && yarn build-css",
     "start": "rimraf dist && DEV=1 rollup -c --watch",
     "test": "jest",
