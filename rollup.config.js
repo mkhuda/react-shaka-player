@@ -23,14 +23,6 @@ const defaultPlugins = [
   babel({
     exclude: "node_modules/**",
   }),
-  copy({
-    targets: [
-      {
-        src: "src/styles/ui.css",
-        dest: "dist",
-      },
-    ],
-  }),
   nodeResolve(),
   commonjs(),
   typescript({

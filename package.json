@@ -7,19 +7,21 @@
   "author": "Muhammad K. Huda",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf dist && rollup -c --perf",
+    "build-css": "node-minify --compressor clean-css --input \"src/styles/ui.css\" --output \"dist/ui.css\"",
+    "build": "rimraf dist && rollup -c --perf && yarn build-css",
     "start": "rimraf dist && DEV=1 rollup -c --watch",
     "test": "jest",
     "watch": "rollup -c --watch"
   },
   "dependencies": {
-    "rollup": "^2.56.2",
     "shaka-player": "^3.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
+    "@node-minify/clean-css": "^6.2.0",
+    "@node-minify/cli": "^6.2.0",
     "@rollup/plugin-alias": "^3.1.5",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^20.0.0",
@@ -43,6 +45,7 @@
     "react-dom": "^17.0.2",
     "react-test-renderer": "^17.0.2",
     "rimraf": "^3.0.2",
+    "rollup": "^2.56.3",
     "rollup-plugin-bundle-html": "^0.2.2",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-html2": "^3.0.1",
