@@ -1,6 +1,6 @@
 {
   "name": "@mkhuda/react-shaka-player",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "React video player built with Shaka-Player",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
