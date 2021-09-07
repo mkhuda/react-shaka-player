@@ -7,12 +7,11 @@ import { PlayerProps } from "../types/";
 const ReactShakaPlayer = (props: PlayerProps) => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
   const uiContainerRef = React.useRef<HTMLDivElement>(null);
-  const playerStats = React.useRef<Shaka.extern.Stats | null>(null);
 
   const { player, ui } = Hooks.usePlayer(videoRef, uiContainerRef, props);
   Hooks.usePlayerListener(player, props);
   Hooks.useUIListener(ui, player, props);
-  Hooks.useStats(player, playerStats, props);
+  Hooks.useStats(player, props);
 
   const {
     className,
