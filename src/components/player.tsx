@@ -1,6 +1,5 @@
 import * as React from "react";
 import * as Hooks from "../hooks";
-import * as Shaka from "shaka-player/dist/shaka-player.ui";
 
 import { PlayerProps } from "../types/";
 
@@ -34,12 +33,11 @@ const ReactShakaPlayer = (props: PlayerProps) => {
     width: "100%",
   };
 
+  const overlayClassName =
+    className == undefined ? "mk-theme" : "mk-theme " + props.className;
+
   return (
-    <div
-      style={style}
-      ref={uiContainerRef}
-      className={props.className == undefined ? "mk-theme" : props.className}
-    >
+    <div style={style} ref={uiContainerRef} className={overlayClassName}>
       <video
         ref={videoRef}
         className={props.playerClassName}
