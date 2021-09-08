@@ -12,6 +12,7 @@ import html2 from "rollup-plugin-html2";
 import postcss from "rollup-plugin-postcss";
 import replace from "@rollup/plugin-replace";
 import serve from "rollup-plugin-serve";
+import minifyCss from "./rollup-plugin-node-minify";
 
 let builds = [];
 
@@ -31,6 +32,10 @@ const defaultPlugins = [
     target: "es5",
   }),
   strip(),
+  minifyCss({
+    input: "src/styles/ui.css",
+    output: "dist/ui.css",
+  }),
 ];
 
 const distBuildConfig = {

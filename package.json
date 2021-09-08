@@ -9,7 +9,7 @@
   "scripts": {
     "nodeminify": "node ./node_modules/.bin/node-minify",
     "build-css": "yarn nodeminify --compressor clean-css --input \"src/styles/ui.css\" --output \"dist/ui.css\"",
-    "build": "rimraf dist && rollup -c --perf && yarn build-css",
+    "build": "rimraf dist && rollup -c --perf",
     "start": "rimraf dist && DEV=1 rollup -c --watch",
     "test": "jest",
     "watch": "rollup -c --watch"
