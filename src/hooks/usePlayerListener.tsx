@@ -2,7 +2,6 @@ import * as Shaka from "shaka-player/dist/shaka-player.ui";
 import * as React from "react";
 
 import { PlayerProps } from "../types";
-import { SuperConfig } from "../types/enum";
 
 const usePlayerListener = (player: Shaka.Player, props?: PlayerProps) => {
   React.useEffect(() => {
