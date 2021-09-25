@@ -5,7 +5,6 @@ import { PlayerProps } from "../types";
 
 const useStats = (
   player: Shaka.Player,
-  statsRef: React.MutableRefObject<Shaka.extern.Stats>,
   props?: PlayerProps
 ) => {
   const timer = React.useRef<Shaka.util.Timer | null>(null);
@@ -22,7 +21,6 @@ const useStats = (
           mediaEndTime,
         };
         
-        statsRef.current = stats_;
         props.onStatsChanged &&
           props.onStatsChanged({ ...stats_, ...additionalStats });
       };
@@ -35,7 +33,6 @@ const useStats = (
 
     return () => {
       if (player && timer) {
-        statsRef.current = null;
         timer.current.stop();
       }
     };
