@@ -1,4 +1,5 @@
 test/
 demo/
+src/
 .prettierrc
 yarn-error.log

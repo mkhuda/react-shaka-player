@@ -12,6 +12,7 @@ import html2 from "rollup-plugin-html2";
 import postcss from "rollup-plugin-postcss";
 import replace from "@rollup/plugin-replace";
 import serve from "rollup-plugin-serve";
+import { terser } from "rollup-plugin-terser";
 import minifyCss from "./rollup-plugin-node-minify";
 
 let builds = [];
@@ -21,6 +22,7 @@ const defaultPlugins = [
     "process.env.NODE_ENV": JSON.stringify("development"),
     preventAssignment: true,
   }),
+  terser(),
   babel({
     exclude: "node_modules/**",
   }),
@@ -50,7 +52,7 @@ const distBuildConfig = {
       "react-dom": "react-dom",
     },
   },
-  external: ["react"],
+  external: ["react", "shaka-player"],
   plugins: defaultPlugins,
 };
 
