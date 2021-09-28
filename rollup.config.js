@@ -22,7 +22,11 @@ const defaultPlugins = [
     "process.env.NODE_ENV": JSON.stringify("development"),
     preventAssignment: true,
   }),
-  terser(),
+  terser({
+    format: {
+      comments: false,
+    },
+  }),
   babel({
     exclude: "node_modules/**",
   }),
