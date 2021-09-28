@@ -1,4 +1,7 @@
-import * as Shaka from "shaka-player/dist/shaka-player.ui";
+import {
+  Player as ShakaPlayer,
+  polyfill as ShakaPolyfill,
+} from "shaka-player/dist/shaka-player.ui";
 import * as React from "react";
 import * as Configs from "../configs/";
 import UIHooks from "./useUI";
@@ -11,13 +14,13 @@ const usePlayer = (
   uiContainerRef: React.MutableRefObject<HTMLDivElement>,
   props?: PlayerProps
 ) => {
-  const [player, setPlayer] = React.useState<Shaka.Player | null>(null);
+  const [player, setPlayer] = React.useState<ShakaPlayer | null>(null);
   const ui = UIHooks(player, videoRef, uiContainerRef, props);
 
   React.useEffect(() => {
-    Shaka.polyfill.installAll();
+    ShakaPolyfill.installAll();
 
-    const mainPlayer = new Shaka.Player(videoRef.current);
+    const mainPlayer = new ShakaPlayer(videoRef.current);
     setPlayer(mainPlayer);
 
     return () => {
@@ -51,7 +54,7 @@ const usePlayer = (
   }, [player, props.config]);
 
   React.useEffect(() => {
-    if (player && props.src && Shaka.Player.isBrowserSupported()) {
+    if (player && props.src && ShakaPlayer.isBrowserSupported()) {
       const initLoad = async () => {
         try {
           await player.load(props.src);

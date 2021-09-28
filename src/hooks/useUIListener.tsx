@@ -1,11 +1,14 @@
-import * as Shaka from "shaka-player/dist/shaka-player.ui";
+import {
+  Player as ShakaPlayer,
+  ui as ShakaUI,
+} from "shaka-player/dist/shaka-player.ui";
 import * as React from "react";
 
 import { PlayerProps } from "../types";
 
 const useUIListener = (
-  ui: Shaka.ui.Overlay,
-  player: Shaka.Player,
+  ui: ShakaUI.Overlay,
+  player: ShakaPlayer,
   props?: PlayerProps
 ) => {
   React.useEffect(() => {

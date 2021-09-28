@@ -1,4 +1,7 @@
-import * as Shaka from "shaka-player/dist/shaka-player.ui";
+import {
+  Player as ShakaPlayer,
+  ui as ShakaUI,
+} from "shaka-player/dist/shaka-player.ui";
 import * as React from "react";
 import * as Configs from "../configs/";
 
@@ -6,15 +9,15 @@ import { PlayerProps } from "../types";
 import { SuperConfig } from "../types/enum";
 
 const useUI = (
-  player: Shaka.Player,
+  player: ShakaPlayer,
   videoRef: React.MutableRefObject<HTMLVideoElement>,
   uiContainerRef: React.MutableRefObject<HTMLDivElement>,
   props?: PlayerProps
 ) => {
-  const [ui, setUi] = React.useState<Shaka.ui.Overlay | null>(null);
+  const [ui, setUi] = React.useState<ShakaUI.Overlay | null>(null);
   React.useEffect(() => {
     if (player) {
-      const ui = new Shaka.ui.Overlay(
+      const ui = new ShakaUI.Overlay(
         player,
         uiContainerRef.current,
         videoRef.current
