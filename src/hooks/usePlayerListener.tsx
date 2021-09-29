@@ -1,11 +1,14 @@
-import * as Shaka from "shaka-player/dist/shaka-player.ui";
+import {
+  Player as ShakaPlayer,
+  extern as ShakaExtern,
+} from "shaka-player/dist/shaka-player.ui";
 import * as React from "react";
 
 import { PlayerProps } from "../types";
 
-const usePlayerListener = (player: Shaka.Player, props?: PlayerProps) => {
+const usePlayerListener = (player: ShakaPlayer, props?: PlayerProps) => {
   React.useEffect(() => {
-    const _onPlayerErrorEvent = (error: Shaka.extern.Error | any) => {
+    const _onPlayerErrorEvent = (error: ShakaExtern.Error | any) => {
       props.onPlayerError && props.onPlayerError(error);
     };
     const _onBufferingEvent = (bufferStatus: any) => {

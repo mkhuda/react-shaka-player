@@ -1,13 +1,13 @@
-import * as Shaka from "shaka-player/dist/shaka-player.ui";
+import {
+  Player as ShakaPlayer,
+  util as ShakaUtil,
+} from "shaka-player/dist/shaka-player.ui";
 import * as React from "react";
 
 import { PlayerProps } from "../types";
 
-const useStats = (
-  player: Shaka.Player,
-  props?: PlayerProps
-) => {
-  const timer = React.useRef<Shaka.util.Timer | null>(null);
+const useStats = (player: ShakaPlayer, props?: PlayerProps) => {
+  const timer = React.useRef<ShakaUtil.Timer | null>(null);
   React.useEffect(() => {
     if (player) {
       const _sendStats = () => {
@@ -20,11 +20,11 @@ const useStats = (
           mediaCurrentTime,
           mediaEndTime,
         };
-        
+
         props.onStatsChanged &&
           props.onStatsChanged({ ...stats_, ...additionalStats });
       };
-      const _timer = new Shaka.util.Timer(() => {
+      const _timer = new ShakaUtil.Timer(() => {
         _sendStats();
       });
       _timer.tickEvery(1);
