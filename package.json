@@ -1,6 +1,6 @@
 {
   "name": "@mkhuda/react-shaka-player",
-  "version": "1.1.10-beta.2",
+  "version": "1.1.10-beta.3",
   "description": "React video player built with Shaka-Player",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,7 +10,7 @@
     "nodeminify": "node ./node_modules/.bin/node-minify",
     "build-css": "yarn nodeminify --compressor clean-css --input \"src/styles/ui.css\" --output \"dist/ui.css\"",
     "build": "rimraf dist && rollup -c --perf",
-    "start": "rimraf dist && DEV=1 rollup -c --watch",
+    "start": "yarn build",
     "test": "jest",
     "watch": "rollup -c --watch"
   },
