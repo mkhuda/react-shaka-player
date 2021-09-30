@@ -1,6 +1,8 @@
 // Plugins
+import analyze from 'rollup-plugin-analyzer'
 import commonjs from "@rollup/plugin-commonjs";
 import minifyCss from "./rollup-plugin-node-minify";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import replace from "@rollup/plugin-replace";
 import strip from "@rollup/plugin-strip";
 import typescript from "@rollup/plugin-typescript";
@@ -9,6 +11,7 @@ import { nodeResolve } from "@rollup/plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
 
 const defaultPlugins = [
+  peerDepsExternal(),
   replace({
     "process.env.NODE_ENV": JSON.stringify("development"),
     preventAssignment: true,
@@ -33,6 +36,7 @@ const defaultPlugins = [
     input: "src/styles/ui.css",
     output: "dist/ui.css",
   }),
+  analyze(),
 ];
 
 const distBuildConfig = {
